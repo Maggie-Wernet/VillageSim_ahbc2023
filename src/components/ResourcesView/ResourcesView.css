@@ -1,0 +1,32 @@
+
+
+
+
+.resourcesContainer {
+    margin: 0;
+    padding: 0;
+    width: 500px;
+    background-color: #f1f1f1;
+    border: 2px solid #000;
+    border-top: 0px solid black;
+}
+
+.resourcesTable {
+    width: 100%;
+}
+
+table, td, th {
+    border: 1px solid;
+    font-size: 1.6rem;
+  }
+
+th, td {
+    text-align: left;
+    padding-left: 10px;
+}
+  
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+

@@ -1,7 +1,9 @@
 import "./Tile.css"
 
-export function Tile() {
+export function Tile( props: {resources: () => void}) {
     return (
-        <div className="tile"></div>
+        <div className="tile">
+            <button></button>
+        </div>
     )
 }
