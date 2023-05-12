@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Improvement } from "../../Models/Improvement";
+import "./AddImprovement.css";
 
 export function AddImprovement(props: { improvements: Improvement[] }) {
   //   const [improvements, setImprovements] = useState([
@@ -9,21 +10,31 @@ export function AddImprovement(props: { improvements: Improvement[] }) {
   //     { type: "Lumber Mill", level: 1 },
   //     { type: "Well", level: 1 },
   //   ]);
+  const [benefit, setBenefit] = useState("House");
+  const [cost, setCost] = useState("5 lumber, 5 water, 5 grain, 1 sheep");
 
   return (
-    <div>
+    <div className="AddImprovement">
       <form>
         <select>
           {props.improvements.map((improvement) => (
             <option value={improvement.type}>{improvement.type}</option>
           ))}
-          {/* <option value={props.improvements[0].type}>House</option>
-          <option value={improvements[1].type}>Field</option>
-          <option value={improvements[2].type}>Pasture</option>
-          <option value={improvements[3].type}>Lumber Mill</option>
-          <option value={improvements[4].type}>Well</option> */}
         </select>
+        <h3>
+          Benefit: <span>{benefit}</span>
+        </h3>
+        <h3>
+          Cost: <span>{cost}</span>
+        </h3>
+        <button className="cancel">Cancel</button>
+        <button className="add">Add</button>
       </form>
     </div>
   );
 }
+
+// function dropdownValue() {
+//     // props.improvements.map(improvement => improvement.type)
+
+//     }
