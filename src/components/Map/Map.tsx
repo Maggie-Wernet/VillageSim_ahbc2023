@@ -1,37 +1,110 @@
+import { Improvement } from "../../Models/Improvement";
 import { Tile } from "../Tile/Tile";
-import "./Map.css"
+import "./Map.css";
 
-export function Map(props: {resources: any} ) {
-    return (
-        <div className="mapGrid">
-
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            <Tile resources={props.resources}></Tile>
-            
-            
-        </div>
-    )
+export function Map(props: { resources: any; improvements: Improvement[] }) {
+  return (
+    <div className="mapGrid">
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+      <Tile
+        resources={props.resources}
+        improvements={props.improvements}
+      ></Tile>
+    </div>
+  );
 }
