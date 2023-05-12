@@ -2,108 +2,133 @@ import { Improvement } from "../../Models/Improvement";
 import { Tile } from "../Tile/Tile";
 import "./Map.css";
 
-export function Map(props: { resources: any; improvements: Improvement[] }) {
+export function Map(props: { resources: any; improvements: Improvement[], openModal: () => void }) {
   return (
     <div className="mapGrid">
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
       <Tile
         resources={props.resources}
         improvements={props.improvements}
+        openModal={props.openModal}
       ></Tile>
     </div>
   );

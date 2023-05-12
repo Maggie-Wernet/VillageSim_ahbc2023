@@ -5,6 +5,21 @@ import { Map } from "./components/Map/Map";
 import { RescourcesView } from "./components/ResourcesView/ResourcesView";
 import { Improvement } from "./Models/Improvement";
 import { AddImprovement } from "./components/AddImprovement/AddImprovement";
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
+
+const customStyles = {
+  content: {
+    marginLeft: "61px",
+    marginTop: "61px",
+    width: "255px",
+    height: "255px",
+    backgroundColor: "#f1f1f1",
+    border: "4px solid black"
+  },
+};
+
+Modal.setAppElement('#root');
 
 function App() {
   const [people, setPeople] = useState(0);
@@ -29,13 +44,31 @@ function App() {
     { type: "Well", level: 1 },
   ]);
 
-  return (
-    <div>
-      <Map resources={resources} improvements={improvements}></Map>
-      <RescourcesView resources={resources} />
-      <AddImprovement improvements={improvements}></AddImprovement>
-    </div>
-  );
-}
+  const [modalIsOpen, setIsOpen] = useState(false)
 
-export default App;
+    function closeModal() {
+        setIsOpen(false);
+      }
+
+      function openModal() {
+        setIsOpen(true)
+      }
+
+      return (
+        <div>
+          <Map resources={resources} improvements={improvements} openModal={() => setIsOpen(true)}></Map>
+          <RescourcesView resources={resources} />
+          <Modal
+                    isOpen={modalIsOpen}
+                    onRequestClose={closeModal}
+                    style={customStyles}
+                    contentLabel="Example Modal"
+                >
+                    <AddImprovement improvements={improvements} onSubmitForm={() => {}} onClose={closeModal}></AddImprovement>
+                </Modal>
+          
+        </div>
+      );
+    }
+    
+    export default App;

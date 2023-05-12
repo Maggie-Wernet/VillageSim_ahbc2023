@@ -1,5 +1,29 @@
-.AddImprovement {
-  background-color: gainsboro;
-  border: 2px solid black;
-  width: 500px;
+
+.AddImprovementSelect {
+  border: 3px solid black;
+  width: 70%;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.AddImprovementSpan span {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+
+.AddImprovementBtnContainer {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  
+}
+
+.AddImprovementBtn {
+  padding: 10px;
+  width: 100px;
+  border: 3px solid black;
+  font-weight: bold;
+  cursor: pointer;
 }
