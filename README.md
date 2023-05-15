@@ -1,46 +1,76 @@
-# Getting Started with Create React App
+# Grid Map Village Simulation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="game_screenshot.png" alt="Game Screenshot">
+</p>
 
-## Available Scripts
+This is a grid-based village simulation game built using React. In this game, players can create and manage their own virtual village on a grid-based map, making strategic decisions to ensure the prosperity and well-being of their villagers.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Grid-based Map**: Manage your village on a grid-based map, where each cell has the potential to house a new improvement to your village. Plan on trading resources to make vital improvements to ensure village growth.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Resource Management**: Allocate your resources correctly to be able to maintain a balance between resource consumption and production to sustain your village's growth.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Building Construction**: Construct various types of improvements on the grid, each serving a unique purpose and providing specific benefits. Build houses for villager, fields for food production, pastures for animals, lumber mills for resources extraction and wells to water villagers, fields, and animals.
 
-### `npm test`
+- **Progression and Achievements**: Earn achievements and unlock rewards as you progress and achieve milestones in the game. Challenge yourself to maximize the development and prosperity of your village.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+To run the Grid Map Village Simulation locally, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+   ```
+   git clone https://github.com/Maggie-Wernet/VillageSim_ahbc2023.git
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Navigate to the project directory:
+   ```
+   cd VillageSim_ahbc2023
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install the dependencies:
+   ```
+   npm install
+   ```
 
-### `npm run eject`
+4. Start the development server:
+   ```
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Contributions to the Grid Map Village Simulation project are welcome! If you'd like to contribute, please follow these steps:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Fork the repository on GitHub.
+2. Clone your forked repository to your local machine.
+3. Create a new branch:
+   ```
+   git checkout -b my-new-feature
+   ```
+4. Make your changes and commit them:
+   ```
+   git commit -am 'Add some feature'
+   ```
+5. Push the changes to your forked repository:
+   ```
+   git push origin my-new-feature
+   ```
+6. Submit a pull request detailing your changes.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Acknowledgments
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- The Grid Map Village Simulation game draws inspiration from village simulation games and trading mechanics, creating an engaging and strategic experience.
+- We would like to express our gratitude to the open-source community for providing valuable resources and libraries that made this project possible.
+
+
+## Contributers
+
+- Grif Wakeman -
+- Jessica Trela - github.com/trelaj
+- Maggie Wernet - 
