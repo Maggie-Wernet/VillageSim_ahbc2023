@@ -40,7 +40,7 @@ To run the Grid Map Village Simulation locally, follow these steps:
    npm start
    ```
 
-   ```
+
 
 ## Contributing
 
