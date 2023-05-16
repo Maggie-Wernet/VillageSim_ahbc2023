@@ -75,27 +75,48 @@ function App() {
     setAddedImprovement(improvement);
 
     if (improvement.type === "House") {
-      setPeople((prev) => prev + 5);
-      setLumber((prev) => prev - 5);
-      setGrain((prev) => prev - 5);
-      setWater((prev) => prev - 5);
-      setSheep((prev) => prev - 1);
+      if (lumber >= 5 && grain >= 5 && water >= 5 && sheep >= 1) {
+        setPeople((prev) => prev + 5);
+        setLumber((prev) => prev - 5);
+        setGrain((prev) => prev - 5);
+        setWater((prev) => prev - 5);
+        setSheep((prev) => prev - 1);
+      } else {
+        console.log("warning: you don't have enough resources");
+        return; //display an error message
+      }
     } else if (improvement.type === "Field") {
-      setGrain((prev) => prev + 10);
-      setPeople((prev) => prev - 1);
-      setWater((prev) => prev - 2);
+      if (people >= 1 && water >= 2) {
+        setGrain((prev) => prev + 10);
+        setPeople((prev) => prev - 1);
+        setWater((prev) => prev - 2);
+      } else {
+        return; //display an error message
+      }
     } else if (improvement.type === "Pasture") {
-      setSheep((prev) => prev + 10);
-      setPeople((prev) => prev - 1);
-      setGrain((prev) => prev - 2);
-      setWater((prev) => prev - 2);
+      if (people >= 1 && grain >= 2 && water >= 2) {
+        setSheep((prev) => prev + 10);
+        setPeople((prev) => prev - 1);
+        setGrain((prev) => prev - 2);
+        setWater((prev) => prev - 2);
+      } else {
+        return;
+      }
     } else if (improvement.type === "Lumber Mill") {
-      setLumber((prev) => prev + 10);
-      setPeople((prev) => prev - 1);
+      if (people >= 1) {
+        setLumber((prev) => prev + 10);
+        setPeople((prev) => prev - 1);
+      } else {
+        return;
+      }
     } else if (improvement.type === "Well") {
-      setWater((prev) => prev + 10);
-      setPeople((prev) => prev - 1);
-      setLumber((prev) => prev - 2);
+      if (people >= 1 && lumber >= 2) {
+        setWater((prev) => prev + 10);
+        setPeople((prev) => prev - 1);
+        setLumber((prev) => prev - 2);
+      } else {
+        return;
+      }
     }
   }
 
