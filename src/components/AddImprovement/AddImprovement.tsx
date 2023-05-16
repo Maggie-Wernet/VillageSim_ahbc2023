@@ -38,13 +38,21 @@ export function AddImprovement(props: { improvements: Improvement[], onSubmitFor
 function handleFormSubmit(e: any) {
     e.preventDefault();
 
+    const addedImprovement: Improvement = {
+        type: selected,
+        level: 1
+    }
+
+
+    props.onSubmitForm(addedImprovement)
+
     props.onClose()
 
 }
 
 return (
   <div className="AddImprovement">
-      <form>
+      <form onSubmit={handleFormSubmit}>
           <select className="AddImprovementSelect" defaultValue={props.improvements[0].type} onChange={handleSelect}>
               <option value={props.improvements[0].type}>House</option>
               <option value={props.improvements[1].type}>Field</option>
@@ -63,7 +71,7 @@ return (
           </h3>
           <div className="AddImprovementBtnContainer">
               <button className="AddImprovementBtn cancel" onClick={() => props.onClose()}>Cancel</button>
-              <button className="AddImprovementBtn add" onSubmit={handleFormSubmit}>Add</button>
+              <button className="AddImprovementBtn add">Add</button>
           </div>
       </form>
   </div>
