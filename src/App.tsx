@@ -1,35 +1,11 @@
-import React, { useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { Map } from "./components/Map/Map";
-import { RescourcesView } from "./components/ResourcesView/ResourcesView";
-import { Improvement } from "./Models/Improvement";
-import { AddImprovement } from "./components/AddImprovement/AddImprovement";
-import ReactDOM from "react-dom";
-import Modal from "react-modal";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBucket,
-  faCow,
-  faTree,
-  faTractor,
-  faHouse,
-} from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import { Improvement } from './Models/Improvement';
+import { Map } from './components/Map/Map';
+import { RescourcesView } from './components/ResourcesView/ResourcesView';
+import { Resource } from './Models/Resource';
 
-const improvementImages = [faBucket, faCow, faTree, faTractor, faHouse];
-
-const customStyles = {
-  content: {
-    marginLeft: "61px",
-    marginTop: "61px",
-    width: "255px",
-    height: "255px",
-    backgroundColor: "#f1f1f1",
-    border: "4px solid black",
-  },
-};
-
-Modal.setAppElement("#root");
 
 function App() {
   const [people, setPeople] = useState(0);
@@ -38,40 +14,33 @@ function App() {
   const [lumber, setLumber] = useState(5);
   const [water, setWater] = useState(5);
 
-  const resources = {
-    people,
-    grain,
-    sheep,
-    lumber,
-    water,
-  };
-  // const [improvementType, setImprovementType] = useState("");
-  const [improvements, setImprovements] = useState([
-    { type: "House", level: 1 }, //house
-    { type: "Field", level: 1 }, //tractor
-    { type: "Pasture", level: 1 }, //cow
-    { type: "Lumber Mill", level: 1 }, //axe
-    { type: "Well", level: 1 }, //bucket
-  ]);
+  const resources: Resource[] = [
+    {type: "People", amount: people},
+    {type: "Grain", amount: grain},
+    {type: "Sheep", amount: sheep},
+    {type: "Lumber", amount: lumber},
+    {type: "Water", amount: water},
+  ];
 
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const [tiles, setTiles] = useState<Improvement[]>([
+    {id: 1, type: "", level: 0},{id: 2, type: "", level: 0},{id: 3, type: "", level: 0},{id: 4, type: "", level: 0},{id: 5, type: "", level: 0},
+    {id: 6, type: "", level: 0},{id: 7, type: "", level: 0},{id: 8, type: "", level: 0},{id: 9, type: "", level: 0},{id: 10, type: "", level: 0},
+    {id: 11, type: "", level: 0},{id: 12, type: "", level: 0},{id: 13, type: "", level: 0},{id: 14, type: "", level: 0},{id: 15, type: "", level: 0},
+    {id: 16, type: "", level: 0},{id: 17, type: "", level: 0},{id: 18, type: "", level: 0},{id: 19, type: "", level: 0},{id: 20, type: "", level: 0},
+    {id: 21, type: "", level: 0},{id:22, type: "", level: 0},{id: 23, type: "", level: 0},{id: 24, type: "", level: 0},{id: 25, type: "", level: 0}
+  ])
 
-  function closeModal() {
-    setIsOpen(false);
-  }
+  const [tileId, setTileId] = useState(0);
 
-  function openModal() {
-    setIsOpen(true);
-  }
+  const [addedImprovement, setAddedImprovement] = useState<Improvement>({id: 0, type: "", level: 1});
 
-  const [addedImprovement, setAddedImprovement] = useState<Improvement>({
-    type: "",
-    level: 1,
-  });
+  function handleAddedImprovement( improvement: Improvement) {
+    setTiles((prevTiles) =>
+      prevTiles.map((tile) =>
+        tile.id === improvement.id ? { ...tile, ...improvement } : tile
+      )
+    );
 
-  console.log(addedImprovement);
-
-  function handleAddedImprovement(improvement: Improvement) {
     setAddedImprovement(improvement);
 
     if (improvement.type === "House") {
@@ -122,27 +91,10 @@ function App() {
 
   return (
     <div>
-      <Map
-        resources={resources}
-        improvements={improvements}
-        openModal={() => setIsOpen(true)}
-      ></Map>
+     <div className="App">
+      <Map resources={resources} tiles={tiles} onSubmitForm={handleAddedImprovement} sendId={setTileId} giveId={tileId}/>
       <RescourcesView resources={resources} />
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-      >
-        <AddImprovement
-          resources={resources}
-          improvements={improvements}
-          onSubmitForm={(newImprovement: Improvement) =>
-            handleAddedImprovement(newImprovement)
-          }
-          onClose={closeModal}
-        ></AddImprovement>
-      </Modal>
+    </div>
     </div>
   );
 }
