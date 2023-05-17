@@ -135,6 +135,7 @@ function App() {
         contentLabel="Example Modal"
       >
         <AddImprovement
+          resources={resources}
           improvements={improvements}
           onSubmitForm={(newImprovement: Improvement) =>
             handleAddedImprovement(newImprovement)
