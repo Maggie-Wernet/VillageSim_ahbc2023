@@ -10,11 +10,24 @@ This is a grid-based village simulation game built using React. In this game, pl
 
 - **Grid-based Map**: Manage your village on a grid-based map, where each cell has the potential to house a new improvement to your village. Plan on trading resources to make vital improvements to ensure village growth.
 
+<p align="center">
+  <img src="./src/gameplayimages/addimprovement.png" alt="Add Improvement">
+</p>
+
 - **Resource Management**: Allocate your resources correctly to be able to maintain a balance between resource consumption and production to sustain your village's growth.
+
+
+<p align="center">
+  <img src="./src/gameplayimages/resourceview.png" alt="Resource View">
+</p>
 
 - **Building Construction**: Construct various types of improvements on the grid, each serving a unique purpose and providing specific benefits. Build houses for villager, fields for food production, pastures for animals, lumber mills for resources extraction and wells to water villagers, fields, and animals.
 
 - **Progression and Achievements**: Earn achievements and unlock rewards as you progress and achieve milestones in the game. Challenge yourself to maximize the development and prosperity of your village.
+
+<p align="center">
+  <img src="./src/gameplayimages/editimprovement.png" alt="edit improvements">
+</p>
 
 ## Installation
 
