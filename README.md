@@ -84,6 +84,6 @@ Contributions to the Grid Map Village Simulation project are welcome! If you'd l
 
 ## Contributers
 
-- Grif Wakeman -
-- Jessica Trela - github.com/trelaj
-- Maggie Wernet - 
+- Grif Wakeman - App, Map, AddImprovement, EditImprovementDialog, Tile, ResourceView, all CSS files
+- Jessica Trela - App, Map, EditImprovementDialog, Tile
+- Maggie Wernet - App, Map, AddImprovement, Readme
