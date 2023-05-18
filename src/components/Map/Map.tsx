@@ -19,6 +19,17 @@ const customStyles = {
   },
 };
 
+const customStyles2 = {
+  content: {
+    marginLeft: "10px",
+    marginTop: "10px",
+    width: "350px",
+    height: "360px",
+    backgroundColor: "#f1f1f1",
+    border: "4px solid black",
+  },
+};
+
 export function Map(props: {
   resources: Resource[];
   tiles: Improvement[];
@@ -29,6 +40,8 @@ export function Map(props: {
   sendLevel: (level: number) => void;
   giveType: string;
   giveLevel: number;
+  sendImage: (image: string) => void;
+  giveImage: string;
   onUpgrade: (improvement: Improvement) => void;
   onDowngrade: (improvement: Improvement) => void;
   onRemove: (improvement: Improvement) => void;
@@ -66,6 +79,7 @@ export function Map(props: {
           sendId={props.sendId}
           sendType={props.sendType}
           sendLevel={props.sendLevel}
+          sendImage={props.sendImage}
         />
       ))}
       <Modal
@@ -85,7 +99,7 @@ export function Map(props: {
       <Modal
         isOpen={modalEditIsOpen}
         onRequestClose={closeModalEdit}
-        style={customStyles}
+        style={customStyles2}
         contentLabel="Example Modal"
       >
         <EditImprovementDialog
@@ -96,6 +110,7 @@ export function Map(props: {
           onUpgrade={props.onUpgrade}
           onDowngrade={props.onDowngrade}
           giveId={props.giveId}
+          giveImage={props.giveImage}
           onRemove={props.onRemove}
           resources={props.resources}
         />

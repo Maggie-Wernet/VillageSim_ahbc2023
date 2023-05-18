@@ -5,6 +5,11 @@ import { Improvement } from "./Models/Improvement";
 import { Map } from "./components/Map/Map";
 import { RescourcesView } from "./components/ResourcesView/ResourcesView";
 import { Resource } from "./Models/Resource";
+import peopleImage from "./images/pasture.png"
+import grainImage from "./images/grain.png"
+import sheepImage from "./images/sheep.png"
+import lumberImage from "./images/lumber.png"
+import waterImage from "./images/water.png"
 
 function App() {
   const [people, setPeople] = useState(0);
@@ -14,49 +19,51 @@ function App() {
   const [water, setWater] = useState(5);
 
   const resources: Resource[] = [
-    { type: "People", amount: people },
-    { type: "Grain", amount: grain },
-    { type: "Sheep", amount: sheep },
-    { type: "Lumber", amount: lumber },
-    { type: "Water", amount: water },
+    { type: "People", amount: people, image: peopleImage },
+    { type: "Grain", amount: grain, image: grainImage },
+    { type: "Sheep", amount: sheep, image: sheepImage },
+    { type: "Lumber", amount: lumber, image: lumberImage },
+    { type: "Water", amount: water, image: waterImage },
   ];
 
   const [tiles, setTiles] = useState<Improvement[]>([
-    { id: 1, type: "", level: 0 },
-    { id: 2, type: "", level: 0 },
-    { id: 3, type: "", level: 0 },
-    { id: 4, type: "", level: 0 },
-    { id: 5, type: "", level: 0 },
-    { id: 6, type: "", level: 0 },
-    { id: 7, type: "", level: 0 },
-    { id: 8, type: "", level: 0 },
-    { id: 9, type: "", level: 0 },
-    { id: 10, type: "", level: 0 },
-    { id: 11, type: "", level: 0 },
-    { id: 12, type: "", level: 0 },
-    { id: 13, type: "", level: 0 },
-    { id: 14, type: "", level: 0 },
-    { id: 15, type: "", level: 0 },
-    { id: 16, type: "", level: 0 },
-    { id: 17, type: "", level: 0 },
-    { id: 18, type: "", level: 0 },
-    { id: 19, type: "", level: 0 },
-    { id: 20, type: "", level: 0 },
-    { id: 21, type: "", level: 0 },
-    { id: 22, type: "", level: 0 },
-    { id: 23, type: "", level: 0 },
-    { id: 24, type: "", level: 0 },
-    { id: 25, type: "", level: 0 },
+    { id: 1, type: "", level: 0, image: "" },
+    { id: 2, type: "", level: 0, image: "" },
+    { id: 3, type: "", level: 0, image: "" },
+    { id: 4, type: "", level: 0, image: "" },
+    { id: 5, type: "", level: 0, image: "" },
+    { id: 6, type: "", level: 0, image: "" },
+    { id: 7, type: "", level: 0, image: "" },
+    { id: 8, type: "", level: 0, image: "" },
+    { id: 9, type: "", level: 0, image: "" },
+    { id: 10, type: "", level: 0, image: "" },
+    { id: 11, type: "", level: 0, image: "" },
+    { id: 12, type: "", level: 0, image: "" },
+    { id: 13, type: "", level: 0, image: "" },
+    { id: 14, type: "", level: 0, image: "" },
+    { id: 15, type: "", level: 0, image: "" },
+    { id: 16, type: "", level: 0, image: "" },
+    { id: 17, type: "", level: 0, image: "" },
+    { id: 18, type: "", level: 0, image: "" },
+    { id: 19, type: "", level: 0, image: "" },
+    { id: 20, type: "", level: 0, image: "" },
+    { id: 21, type: "", level: 0, image: "" },
+    { id: 22, type: "", level: 0, image: "" },
+    { id: 23, type: "", level: 0, image: "" },
+    { id: 24, type: "", level: 0, image: "" },
+    { id: 25, type: "", level: 0, image: "" },
   ]);
 
   const [tileId, setTileId] = useState(0);
   const [tileType, setTileType] = useState("");
   const [tileLevel, setTileLevel] = useState(0);
+  const [tileImage, setTileImage] = useState("")
 
   const [addedImprovement, setAddedImprovement] = useState<Improvement>({
     id: 0,
     type: "",
     level: 1,
+    image: ""
   });
 
   function handleAddedImprovement(improvement: Improvement) {
@@ -209,9 +216,11 @@ function App() {
         tile.id === improvement.id ? { ...tile, ...improvement } : tile
       )
     );
-
+    
     setAddedImprovement(improvement);
+
   }
+  
   return (
     <div>
       <div className="App">
@@ -225,6 +234,8 @@ function App() {
           sendLevel={setTileLevel}
           giveType={tileType}
           giveLevel={tileLevel}
+          sendImage={setTileImage}
+          giveImage={tileImage}
           onUpgrade={handleUpgrade}
           onDowngrade={handleDowngrade}
           onRemove={handleRemove}

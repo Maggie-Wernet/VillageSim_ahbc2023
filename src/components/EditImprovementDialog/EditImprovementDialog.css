@@ -1,0 +1,9 @@
+
+
+.editHeader {
+    display: flex;
+}
+
+.editHeader h3 {
+    margin-right: 40px;
+}

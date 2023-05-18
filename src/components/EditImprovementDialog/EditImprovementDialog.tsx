@@ -2,6 +2,8 @@ import { NumericLiteral } from "typescript";
 import { Improvement } from "../../Models/Improvement";
 import { Resource } from "../../Models/Resource";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import "./EditImprovementDialog.css"
 
 export function EditImprovementDialog(props: {
   onCloseEdit: () => void;
@@ -9,11 +11,16 @@ export function EditImprovementDialog(props: {
   giveId: number;
   giveType: string;
   giveLevel: number;
+  giveImage: string;
   onUpgrade: (improvement: Improvement) => void;
   onDowngrade: (improvement: Improvement) => void;
   onRemove: (improvement: Improvement) => void;
   resources: Resource[];
 }) {
+
+  const [benefit, setBenefit] = useState("")
+  const [cost, setCost] = useState("")
+
   function handleUpgrade(e: any) {
     e.preventDefault();
 
@@ -21,7 +28,7 @@ export function EditImprovementDialog(props: {
       id: props.giveId,
       type: props.giveType,
       level: props.giveLevel + 1,
-      image: props.giveType,
+      image: props.giveImage,
     };
 
     props.onUpgrade(addedImprovement);
@@ -35,10 +42,10 @@ export function EditImprovementDialog(props: {
       id: props.giveId,
       type: props.giveType,
       level: props.giveLevel - 1,
-      image: props.giveType,
+      image: props.giveImage,
     };
 
-    props.onUpgrade(addedImprovement);
+    props.onDowngrade(addedImprovement);
 
     props.onCloseEdit();
   }
@@ -79,7 +86,7 @@ export function EditImprovementDialog(props: {
       ) {
         return true;
       }
-    } else if (props.giveType === "Lumber") {
+    } else if (props.giveType === "Lumber Mill") {
       if (props.resources[0].amount < 1) {
         return true;
       }
@@ -98,19 +105,25 @@ export function EditImprovementDialog(props: {
     }
   }
 
+
   return (
     <div>
+      <div className="editHeader">
+        <h3 className="AddImprovementSpan">
+          Type: <span>{props.giveType}</span>
+        </h3>
+        <h3 className="AddImprovementSpan">
+          Level: <span>{props.giveLevel}</span>
+        </h3>
+      </div>
       <h3 className="AddImprovementSpan">
-        Type: <span>{props.giveType}</span>
+        Upgrade: <span>This will build another {props.giveType} on this tile.</span>
       </h3>
       <h3 className="AddImprovementSpan">
-        Level: <span>{props.giveLevel}</span>
+        Downgrade: <span>This will remove one {props.giveType} from this tile.</span>
       </h3>
       <h3 className="AddImprovementSpan">
-        Benefit: <span></span>
-      </h3>
-      <h3 className="AddImprovementSpan">
-        Cost: <span></span>
+        Remove: <span>This will remove every {props.giveType} on this tile.</span>
       </h3>
       <div className="AddImprovementBtnContainer">
         <button

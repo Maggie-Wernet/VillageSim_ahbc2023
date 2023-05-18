@@ -19,3 +19,8 @@
 .tile button:focus {
   background-color: #5ac7b0;
 }
+
+
+.tile img {
+  height: 70px;
+}

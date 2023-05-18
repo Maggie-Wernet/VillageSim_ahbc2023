@@ -16,7 +16,7 @@ export function RescourcesView(props: {resources: Resource[]}) {
                 </thead>
                 <tbody>
                     {
-                        props.resources.map(resource => <tr><td>{resource.type}</td><td>{resource.amount}</td></tr>)
+                        props.resources.map((resource, i) => <tr key={i}><td>{resource.type}<img src={resource.image}/></td><td>{resource.amount}</td></tr>)
                     }
                 </tbody>
             </table>

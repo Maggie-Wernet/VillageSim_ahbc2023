@@ -10,12 +10,16 @@ export function Tile(props: {
   sendId: (id: number) => void;
   sendType: (type: string) => void;
   sendLevel: (level: number) => void;
+  sendImage: (image: string) => void;
 }) {
   const handleClick = () => {
     if (props.tile.type !== "") {
       props.openModalEdit();
+      props.sendId(props.tile.id)
       props.sendType(props.tile.type);
       props.sendLevel(props.tile.level);
+      props.sendImage(props.tile.image);
+      console.log(props.tile)
     } else {
       props.openModal();
       props.sendId(props.tile.id);
@@ -26,8 +30,8 @@ export function Tile(props: {
   return (
     <div className="tile">
       <button onClick={handleClick}>
-        <span>{props.tile.image}</span>
-        <span>{props.tile.level}</span>
+        <img src={props.tile.image}/>
+        <span>{props.tile.level > 0 ? props.tile.level : ""}</span>
       </button>
     </div>
   );

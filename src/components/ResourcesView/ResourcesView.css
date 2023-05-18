@@ -30,3 +30,8 @@ table {
     border-collapse: collapse;
   }
 
+
+  tbody img {
+    width: 30px;
+    margin-left: 5px;
+  }

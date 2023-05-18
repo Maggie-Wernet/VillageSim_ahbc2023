@@ -2,6 +2,11 @@ import { useState } from "react";
 import "./AddImprovement.css";
 import { Improvement } from "../../Models/Improvement";
 import { Resource } from "../../Models/Resource";
+import houseImage from "../../images/house.png"
+import fieldImage from "../../images/field.png"
+import pastureImage from "../../images/pasture.png"
+import lumberImage from "../../images/lumbermill.png"
+import wellImage from "../../images/well.png"
 
 export function AddImprovement(props: {
   resources: Resource[];
@@ -14,7 +19,7 @@ export function AddImprovement(props: {
   const [cost, setCost] = useState("");
   const [selected, setSelected] = useState("");
   const [tileId, setTileId] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState("hello");
 
   function handleSelect(e: any) {
     setSelected(e.target.value);
@@ -22,20 +27,25 @@ export function AddImprovement(props: {
     if (e.target.value === "House") {
       setBenefit("+5 People");
       setCost("-5 Lumber, -5 Water, -5 Grain, -1 Sheep");
+      setImage(houseImage);
     } else if (e.target.value === "Field") {
       setBenefit("+10 Grain");
       setCost("-1 Person, -2 Water");
+      setImage(fieldImage);
     } else if (e.target.value === "Pasture") {
       setBenefit("+10 Sheep");
       setCost("-1 Person, -2 Grain, -2 Water");
+      setImage(pastureImage);
     } else if (e.target.value === "Lumber Mill") {
       setBenefit("+10 Lumber");
       setCost("-1 Person");
+      setImage(lumberImage)
     } else if (e.target.value === "Well") {
       setBenefit("+10 Water");
       setCost("-1 Person, -2 Lumber");
+      setImage(wellImage)
     }
-    setImage(e.target.value);
+    
   }
 
   function handleFormSubmit(e: any) {
@@ -45,7 +55,7 @@ export function AddImprovement(props: {
       id: props.giveId,
       type: selected,
       level: 1,
-      image: selected,
+      image: image,
     };
 
     props.onSubmitForm(addedImprovement);
@@ -125,7 +135,7 @@ export function AddImprovement(props: {
           >
             Cancel
           </button>
-          <button className="AddImprovementBtn add">Add</button>
+          <button disabled={selected === ""} className="AddImprovementBtn add">Add</button>
         </div>
       </form>
     </div>
