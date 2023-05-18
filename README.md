@@ -1,7 +1,7 @@
 # Grid Map Village Simulation
 
 <p align="center">
-  <img src="Gameboard.png" alt="Game Screenshot">
+  <img src="./src/gameplayimages/Gameboard.png" alt="Game Screenshot">
 </p>
 
 This is a grid-based village simulation game built using React. In this game, players can create and manage their own virtual village on a grid-based map, making strategic decisions to ensure the prosperity and well-being of their villagers.
