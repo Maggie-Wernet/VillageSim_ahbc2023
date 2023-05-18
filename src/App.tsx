@@ -114,7 +114,7 @@ function App() {
     }
   }
 
-  function handleEditedImprovement(improvement: Improvement) {
+  function handleUpgrade(improvement: Improvement) {
     setTiles((prevTiles) =>
       prevTiles.map((tile) =>
         tile.id === improvement.id ? { ...tile, ...improvement } : tile
@@ -169,6 +169,49 @@ function App() {
     }
   }
 
+  function handleDowngrade(improvement: Improvement) {
+    setTiles((prevTiles) =>
+      prevTiles.map((tile) =>
+        tile.id === improvement.id ? { ...tile, ...improvement } : tile
+      )
+    );
+
+    setAddedImprovement(improvement);
+
+    if (improvement.type === "House") {
+      setPeople((prev) => prev - 5);
+      setLumber((prev) => prev + 5);
+      setGrain((prev) => prev + 5);
+      setWater((prev) => prev + 5);
+      setSheep((prev) => prev + 1);
+    } else if (improvement.type === "Field") {
+      setGrain((prev) => prev - 10);
+      setPeople((prev) => prev + 1);
+      setWater((prev) => prev + 2);
+    } else if (improvement.type === "Pasture") {
+      setSheep((prev) => prev - 10);
+      setPeople((prev) => prev + 1);
+      setGrain((prev) => prev + 2);
+      setWater((prev) => prev + 2);
+    } else if (improvement.type === "Lumber Mill") {
+      setLumber((prev) => prev - 10);
+      setPeople((prev) => prev + 1);
+    } else if (improvement.type === "Well") {
+      setWater((prev) => prev - 10);
+      setPeople((prev) => prev + 1);
+      setLumber((prev) => prev + 2);
+    }
+  }
+
+  function handleRemove(improvement: Improvement) {
+    setTiles((prevTiles) =>
+      prevTiles.map((tile) =>
+        tile.id === improvement.id ? { ...tile, ...improvement } : tile
+      )
+    );
+
+    setAddedImprovement(improvement);
+  }
   return (
     <div>
       <div className="App">
@@ -182,7 +225,9 @@ function App() {
           sendLevel={setTileLevel}
           giveType={tileType}
           giveLevel={tileLevel}
-          onSubmitEdit={handleEditedImprovement}
+          onUpgrade={handleUpgrade}
+          onDowngrade={handleDowngrade}
+          onRemove={handleRemove}
         />
         <RescourcesView resources={resources} />
       </div>

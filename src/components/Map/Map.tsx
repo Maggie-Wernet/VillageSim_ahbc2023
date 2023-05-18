@@ -29,7 +29,9 @@ export function Map(props: {
   sendLevel: (level: number) => void;
   giveType: string;
   giveLevel: number;
-  onSubmitEdit: (improvement: Improvement) => void;
+  onUpgrade: (improvement: Improvement) => void;
+  onDowngrade: (improvement: Improvement) => void;
+  onRemove: (improvement: Improvement) => void;
 }) {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modalEditIsOpen, setModalEditIsOpen] = useState(false);
@@ -91,8 +93,11 @@ export function Map(props: {
           tiles={props.tiles}
           giveType={props.giveType}
           giveLevel={props.giveLevel}
-          onSubmitEdit={props.onSubmitEdit}
+          onUpgrade={props.onUpgrade}
+          onDowngrade={props.onDowngrade}
           giveId={props.giveId}
+          onRemove={props.onRemove}
+          resources={props.resources}
         />
       </Modal>
     </div>
