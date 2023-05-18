@@ -5,7 +5,7 @@ import { Improvement } from "./Models/Improvement";
 import { Map } from "./components/Map/Map";
 import { RescourcesView } from "./components/ResourcesView/ResourcesView";
 import { Resource } from "./Models/Resource";
-import peopleImage from "./images/pasture.png"
+import peopleImage from "./images/people.png"
 import grainImage from "./images/grain.png"
 import sheepImage from "./images/sheep.png"
 import lumberImage from "./images/lumber.png"
